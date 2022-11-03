@@ -4,7 +4,19 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="bd59e441-3c35-48dd-a7ea-318b5293692f" name="Changes" comment="print test2" />
+    <list default="true" id="bd59e441-3c35-48dd-a7ea-318b5293692f" name="Changes" comment="hallo">
+      <change afterPath="$PROJECT_DIR$/.idea/encodings.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/CIFAR10/cifarreadme.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/CIFAR10/jsonsReadMe" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/CIFAR10/testing.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/CIFAR10/training_1.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/CIFAR10/training_2.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/CIFAR10/training_3.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/CIFAR10/training_4.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/CIFAR10/training_5.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gitattributes" beforeDir="false" afterPath="$PROJECT_DIR$/.gitattributes" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -40,8 +52,10 @@
     "ASKED_ADD_EXTERNAL_FILES": "true",
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
+    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
     "com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrary": "JUnit5",
     "com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.JUnit5": "",
+    "last_opened_file_path": "C:/Users/yevge/IdeaProjects/ScienceProject2/src/main/resources/CIFAR10",
     "project.structure.last.edited": "Modules",
     "project.structure.proportion": "0.0",
     "project.structure.side.proportion": "0.0",
@@ -56,6 +70,9 @@
   }
 }]]></component>
   <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\yevge\IdeaProjects\ScienceProject2\src\main\resources\CIFAR10" />
+    </key>
     <key name="CreateTestDialog.Recents.Supers">
       <recent name="" />
     </key>
@@ -156,7 +173,14 @@
       <option name="project" value="LOCAL" />
       <updated>1667436436139</updated>
     </task>
-    <option name="localTasksCounter" value="11" />
+    <task id="LOCAL-00011" summary="hallo">
+      <created>1667437224789</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1667437224789</updated>
+    </task>
+    <option name="localTasksCounter" value="12" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -203,6 +227,7 @@
     <MESSAGE value="large file storage test" />
     <MESSAGE value="print test" />
     <MESSAGE value="print test2" />
-    <option name="LAST_COMMIT_MESSAGE" value="print test2" />
+    <MESSAGE value="hallo" />
+    <option name="LAST_COMMIT_MESSAGE" value="hallo" />
   </component>
 </project>
