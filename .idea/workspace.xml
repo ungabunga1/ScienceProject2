@@ -4,13 +4,14 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="bd59e441-3c35-48dd-a7ea-318b5293692f" name="Changes" comment="Dataset import">
-      <change afterPath="$PROJECT_DIR$/src/main/java/GsonHandler.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/Model/Set.java" afterDir="false" />
+    <list default="true" id="bd59e441-3c35-48dd-a7ea-318b5293692f" name="Changes" comment="Gson json loading and set java class">
+      <change afterPath="$PROJECT_DIR$/src/main/java/ActivationFuncs/IActivationFunctions.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/ActivationFuncs/LeakyRelu.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/ActivationFuncs/Sigmoid.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/CIFAR10/jsonsReadMe.txt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/CIFAR10/jsonsReadMe.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/GsonHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Main/GsonHandler.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Main/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Model/Set.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Model/Set.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -27,6 +28,7 @@
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+    <option name="UPDATE_TYPE" value="REBASE" />
   </component>
   <component name="GithubDefaultAccount">
     <option name="defaultAccountId" value="377978b1-b185-4fd5-8aa8-83ec1a7546e1" />
@@ -65,6 +67,9 @@
   }
 }</component>
   <component name="RecentsManager">
+    <key name="CreateClassDialog.RecentsKey">
+      <recent name="Model" />
+    </key>
     <key name="CopyFile.RECENT_KEYS">
       <recent name="C:\Users\yevge\IdeaProjects\ScienceProject2\src\main\resources\CIFAR10" />
     </key>
@@ -76,8 +81,8 @@
     </key>
   </component>
   <component name="RunManager">
-    <configuration name="Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="Main" />
+    <configuration name="Main.Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="Main.Main" />
       <module name="ScienceProject2" />
       <method v="2">
         <option name="Make" enabled="true" />
@@ -85,7 +90,7 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Application.Main" />
+        <item itemvalue="Application.Main.Main" />
       </list>
     </recent_temporary>
   </component>
@@ -196,7 +201,21 @@
       <option name="project" value="LOCAL" />
       <updated>1667446505047</updated>
     </task>
-    <option name="localTasksCounter" value="15" />
+    <task id="LOCAL-00015" summary="Gson json loading and set java class">
+      <created>1667610991545</created>
+      <option name="number" value="00015" />
+      <option name="presentableId" value="LOCAL-00015" />
+      <option name="project" value="LOCAL" />
+      <updated>1667610991545</updated>
+    </task>
+    <task id="LOCAL-00016" summary="Gson json loading and set java class">
+      <created>1667611059843</created>
+      <option name="number" value="00016" />
+      <option name="presentableId" value="LOCAL-00016" />
+      <option name="project" value="LOCAL" />
+      <updated>1667611059843</updated>
+    </task>
+    <option name="localTasksCounter" value="17" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -245,6 +264,7 @@
     <MESSAGE value="print test2" />
     <MESSAGE value="hallo" />
     <MESSAGE value="Dataset import" />
-    <option name="LAST_COMMIT_MESSAGE" value="Dataset import" />
+    <MESSAGE value="Gson json loading and set java class" />
+    <option name="LAST_COMMIT_MESSAGE" value="Gson json loading and set java class" />
   </component>
 </project>
