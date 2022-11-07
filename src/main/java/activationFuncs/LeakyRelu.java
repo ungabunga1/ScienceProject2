@@ -1,6 +1,6 @@
-package ActivationFuncs;
+package activationFuncs;
 
-public class LeakyRelu implements IActivationFunctions{
+public class LeakyRelu implements IActivationFunc {
 
     private final float mult = 0.1f;
 

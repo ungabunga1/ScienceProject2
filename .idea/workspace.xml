@@ -4,14 +4,25 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="bd59e441-3c35-48dd-a7ea-318b5293692f" name="Changes" comment="Gson json loading and set java class">
-      <change afterPath="$PROJECT_DIR$/src/main/java/ActivationFuncs/IActivationFunctions.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/ActivationFuncs/LeakyRelu.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/ActivationFuncs/Sigmoid.java" afterDir="false" />
+    <list default="true" id="bd59e441-3c35-48dd-a7ea-318b5293692f" name="Changes" comment="activation Functions :)&#10;also moved sets variable to Set class">
+      <change afterPath="$PROJECT_DIR$/src/main/java/activationFuncs/IActivationFunc.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/linearalgebra/Matrix.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/linearalgebra/README.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/linearalgebra/Vector.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/main/Randomizer.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/model/NeuralNet.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/model/layers/HiddenLayer.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/model/layers/InputLayer.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/model/layers/Layer.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/model/layers/OutputLayer.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/GsonHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Main/GsonHandler.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Main/Main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Model/Set.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Model/Set.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ActivationFuncs/IActivationFunctions.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ActivationFuncs/LeakyRelu.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/activationFuncs/LeakyRelu.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ActivationFuncs/Sigmoid.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/activationFuncs/Sigmoid.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Main/GsonHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/main/GsonHandler.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Main/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/main/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Model/Set.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/model/Set.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -52,7 +63,7 @@
     &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
     &quot;com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrary&quot;: &quot;JUnit5&quot;,
     &quot;com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.JUnit5&quot;: &quot;&quot;,
-    &quot;last_opened_file_path&quot;: &quot;C:/Users/yevge/IdeaProjects/ScienceProject2/src/main/resources/CIFAR10&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/Users/yevge/IdeaProjects/ScienceProject2/src/main/java/linearalgebra&quot;,
     &quot;project.structure.last.edited&quot;: &quot;Modules&quot;,
     &quot;project.structure.proportion&quot;: &quot;0.0&quot;,
     &quot;project.structure.side.proportion&quot;: &quot;0.0&quot;,
@@ -71,6 +82,7 @@
       <recent name="Model" />
     </key>
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\yevge\IdeaProjects\ScienceProject2\src\main\java\linearalgebra" />
       <recent name="C:\Users\yevge\IdeaProjects\ScienceProject2\src\main\resources\CIFAR10" />
     </key>
     <key name="CreateTestDialog.Recents.Supers">
@@ -81,16 +93,17 @@
     </key>
   </component>
   <component name="RunManager">
-    <configuration name="Main.Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="Main.Main" />
+    <configuration name="Run The Thing" type="Application" factoryName="Application" temporary="true">
+      <option name="MAIN_CLASS_NAME" value="main.Main" />
       <module name="ScienceProject2" />
+      <option name="PROGRAM_PARAMETERS" value="-ea" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Application.Main.Main" />
+        <item itemvalue="Application.Run The Thing" />
       </list>
     </recent_temporary>
   </component>
@@ -215,7 +228,14 @@
       <option name="project" value="LOCAL" />
       <updated>1667611059843</updated>
     </task>
-    <option name="localTasksCounter" value="17" />
+    <task id="LOCAL-00017" summary="activation Functions :)&#10;also moved sets variable to Set class">
+      <created>1667692473533</created>
+      <option name="number" value="00017" />
+      <option name="presentableId" value="LOCAL-00017" />
+      <option name="project" value="LOCAL" />
+      <updated>1667692473533</updated>
+    </task>
+    <option name="localTasksCounter" value="18" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -265,6 +285,7 @@
     <MESSAGE value="hallo" />
     <MESSAGE value="Dataset import" />
     <MESSAGE value="Gson json loading and set java class" />
-    <option name="LAST_COMMIT_MESSAGE" value="Gson json loading and set java class" />
+    <MESSAGE value="activation Functions :)&#10;also moved sets variable to Set class" />
+    <option name="LAST_COMMIT_MESSAGE" value="activation Functions :)&#10;also moved sets variable to Set class" />
   </component>
 </project>

@@ -1,6 +1,6 @@
-package Main;
+package main;
 
-import Model.Set;
+import model.Set;
 import com.google.gson.Gson;
 import org.apache.commons.io.IOUtils;
 
@@ -11,10 +11,6 @@ public class GsonHandler {
 
     public static Gson g = new Gson();
 
-
-    public GsonHandler() {
-
-    }
     public static Set[] LoadSets() throws IOException {
         Set[] Sets = new Set[6];
 
@@ -28,7 +24,7 @@ public class GsonHandler {
 
             Sets[i] = g.fromJson(IOUtils.resourceToString("/CIFAR10/training_"+(i+1)+".json", StandardCharsets.UTF_8), Set.class).init();
         }
-        System.out.println("DONE");
+        System.out.println("DONE\n");
         return Sets;
     }
 }
