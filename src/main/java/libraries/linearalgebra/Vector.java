@@ -1,5 +1,4 @@
-package linearalgebra;
-import linearalgebra.Matrix;
+package libraries.linearalgebra;
 
 /**
  * The Vector class provides basic vector operations for Euclidean vectors

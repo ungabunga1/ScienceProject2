@@ -1,7 +1,7 @@
 package model.layers;
 
-import linearalgebra.Matrix;
-import linearalgebra.Vector;
+import libraries.linearalgebra.Matrix;
+import libraries.linearalgebra.Vector;
 
 public class InputLayer extends Layer {
 
@@ -13,16 +13,12 @@ public class InputLayer extends Layer {
 
         numberOfNeurons = numberOfInputs;
 
-        inputs = new Vector(new double[numberOfInputs]);
-        activations = new Vector(new double[numberOfNeurons]);
     }
 
     // the input layer is special
     @Override
     public Vector parse(Vector inputs) {
-        activations = new Vector(inputs);
-        inputs = new Vector(inputs);
-        return activations;
+        return inputs;
     }
     @Override
     public void updateWeightsAndBiases(Matrix weights, Vector biases) {

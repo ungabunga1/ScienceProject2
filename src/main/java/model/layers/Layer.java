@@ -1,12 +1,10 @@
 package model.layers;
 
 import activationFuncs.IActivationFunc;
-import linearalgebra.Matrix;
-import linearalgebra.Vector;
+import libraries.linearalgebra.Matrix;
+import libraries.linearalgebra.Vector;
 
 public abstract class Layer {
-    Vector activations;
-    Vector inputs;
 
     Matrix weights;
     Vector biases;
@@ -16,9 +14,7 @@ public abstract class Layer {
 
     // forward propagation
     public Vector parse(Vector inputs) {
-        inputs = new Vector(inputs);
-        activations = activationFunc.Function(weights.multiply(inputs).add(biases)); // weight multiplied by the input, plus the bias, and through the activation function
-        return activations;
+        return activationFunc.function(weights.multiply(inputs).add(biases)); // weight multiplied by the input, plus the bias, and through the activation function
     }
 
     // functions for updating the weights and biases
@@ -27,7 +23,7 @@ public abstract class Layer {
             updateWeights(weights);
             updateBiases(biases);
         } catch (IllegalArgumentException e) {
-            System.out.println(e);
+            e.printStackTrace();
             System.out.println("Stopping The Show :(");
             System.exit(0);
         }
@@ -52,21 +48,6 @@ public abstract class Layer {
     }
 
     // getters and setters
-    public Vector getActivations() {
-        return activations;
-    }
-
-    public void setActivations(Vector activations) {
-        this.activations = activations;
-    }
-
-    public Vector getInputs() {
-        return inputs;
-    }
-
-    public void setInputs(Vector inputs) {
-        this.inputs = inputs;
-    }
 
     public Matrix getWeights() {
         return weights;

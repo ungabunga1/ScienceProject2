@@ -4,25 +4,27 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="bd59e441-3c35-48dd-a7ea-318b5293692f" name="Changes" comment="activation Functions :)&#10;also moved sets variable to Set class">
-      <change afterPath="$PROJECT_DIR$/src/main/java/activationFuncs/IActivationFunc.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/linearalgebra/Matrix.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/linearalgebra/README.md" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/linearalgebra/Vector.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/main/Randomizer.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/model/NeuralNet.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/model/layers/HiddenLayer.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/model/layers/InputLayer.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/model/layers/Layer.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/model/layers/OutputLayer.java" afterDir="false" />
+    <list default="true" id="bd59e441-3c35-48dd-a7ea-318b5293692f" name="Changes" comment="Layers, Neural Networks, linearalgebra, and forward prop :)">
+      <change afterPath="$PROJECT_DIR$/src/main/java/libraries/linearalgebra/readme.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/model/backprop/Gradient.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/multiThreading/Threader.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/model/NeuralNetTest.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/ActivationFuncs/IActivationFunctions.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/ActivationFuncs/LeakyRelu.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/activationFuncs/LeakyRelu.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/ActivationFuncs/Sigmoid.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/activationFuncs/Sigmoid.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Main/GsonHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/main/GsonHandler.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Main/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/main/Main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Model/Set.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/model/Set.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/activationFuncs/IActivationFunc.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/activationFuncs/IActivationFunc.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/activationFuncs/LeakyRelu.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/activationFuncs/LeakyRelu.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/activationFuncs/Sigmoid.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/activationFuncs/Sigmoid.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/linearalgebra/Matrix.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/libraries/linearalgebra/Matrix.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/linearalgebra/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/libraries/linearalgebra/README.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/linearalgebra/Vector.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/libraries/linearalgebra/Vector.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/main/GsonHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/main/GsonHandler.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/main/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/main/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/model/NeuralNet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/model/NeuralNet.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/model/Set.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/model/Set.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/model/layers/HiddenLayer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/model/layers/HiddenLayer.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/model/layers/InputLayer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/model/layers/InputLayer.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/model/layers/Layer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/model/layers/Layer.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/model/layers/OutputLayer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/model/layers/OutputLayer.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -32,8 +34,8 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="JUnit5 Test Class" />
         <option value="Class" />
+        <option value="JUnit5 Test Class" />
       </list>
     </option>
   </component>
@@ -89,6 +91,7 @@
       <recent name="" />
     </key>
     <key name="CreateTestDialog.RecentsKey">
+      <recent name="model" />
       <recent name="" />
     </key>
   </component>
@@ -235,7 +238,14 @@
       <option name="project" value="LOCAL" />
       <updated>1667692473533</updated>
     </task>
-    <option name="localTasksCounter" value="18" />
+    <task id="LOCAL-00018" summary="Layers, Neural Networks, linearalgebra, and forward prop :)">
+      <created>1667781068625</created>
+      <option name="number" value="00018" />
+      <option name="presentableId" value="LOCAL-00018" />
+      <option name="project" value="LOCAL" />
+      <updated>1667781068625</updated>
+    </task>
+    <option name="localTasksCounter" value="19" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -286,6 +296,7 @@
     <MESSAGE value="Dataset import" />
     <MESSAGE value="Gson json loading and set java class" />
     <MESSAGE value="activation Functions :)&#10;also moved sets variable to Set class" />
-    <option name="LAST_COMMIT_MESSAGE" value="activation Functions :)&#10;also moved sets variable to Set class" />
+    <MESSAGE value="Layers, Neural Networks, linearalgebra, and forward prop :)" />
+    <option name="LAST_COMMIT_MESSAGE" value="Layers, Neural Networks, linearalgebra, and forward prop :)" />
   </component>
 </project>

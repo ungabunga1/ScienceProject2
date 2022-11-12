@@ -5,7 +5,7 @@ public class LeakyRelu implements IActivationFunc {
     private final float mult = 0.1f;
 
     @Override
-    public double Function(double x) {
+    public double function(double x) {
         if (x >= 0) {
             return x;
         } else {
@@ -14,7 +14,7 @@ public class LeakyRelu implements IActivationFunc {
     }
 
     @Override
-    public double Derivative(double x) {
+    public double derivative(double x) {
         if (x >= 0) {
             return 1;
         } else {

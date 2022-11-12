@@ -1,4 +1,4 @@
-# linearalgebra
+# libraries.linearalgebra
 A linear algebra package in Java.
 
 For flexibility, most methods are overloaded to include both `static` versions (which require the object as the first parameter) and instance methods. The `static` method does the heavy lifting, and the instance method is a wrapper for the `static` method using `this` as an argument (e.g. `Matrix.transpose(this)`).

@@ -2,6 +2,7 @@ package main;
 
 import model.Set;
 import com.google.gson.Gson;
+import multiThreading.Threader;
 import org.apache.commons.io.IOUtils;
 
 import java.io.IOException;
@@ -11,20 +12,24 @@ public class GsonHandler {
 
     public static Gson g = new Gson();
 
-    public static Set[] LoadSets() throws IOException {
-        Set[] Sets = new Set[6];
+    public static Set[] loadSets() throws IOException {
+
+        String[] names = new String[]{"training_1","training_2","training_3","training_4","training_5","testing"};
 
         System.out.print("LOADING DATASET > ");
-        for (int i = 0; i < Sets.length; i++) {
-
-            if (i == Sets.length-1) {
-                Sets[i] = g.fromJson(IOUtils.resourceToString("/CIFAR10/testing.json", StandardCharsets.UTF_8), Set.class).init();
-                continue;
-            }
-
-            Sets[i] = g.fromJson(IOUtils.resourceToString("/CIFAR10/training_"+(i+1)+".json", StandardCharsets.UTF_8), Set.class).init();
-        }
+        Set[] Sets = Threader.loadSets(names);
         System.out.println("DONE\n");
+
         return Sets;
+    }
+
+    public static Set loadSet(String name) {
+        try {
+            return g.fromJson(IOUtils.resourceToString("/CIFAR10/"+name+".json", StandardCharsets.UTF_8), Set.class).init();
+        } catch (IOException e) {
+            e.printStackTrace();
+            System.exit(0);
+        }
+        return null;
     }
 }

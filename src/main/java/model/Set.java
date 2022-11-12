@@ -3,7 +3,8 @@ package model;
 
 import main.GsonHandler;
 import main.Randomizer;
-import linearalgebra.Vector;
+import libraries.linearalgebra.Vector;
+import multiThreading.Threader;
 
 import java.io.IOException;
 import java.util.ArrayList;
@@ -22,7 +23,7 @@ public class Set {
     protected String[] labelNames; // what the labels actually mean
 
     public static void initSets() throws IOException {
-        Sets = GsonHandler.LoadSets();
+        Sets = GsonHandler.loadSets();
         RandomSets = randomizeSets(Sets);
     }
 
