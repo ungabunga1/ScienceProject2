@@ -4,27 +4,30 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="bd59e441-3c35-48dd-a7ea-318b5293692f" name="Changes" comment="Layers, Neural Networks, linearalgebra, and forward prop :)">
-      <change afterPath="$PROJECT_DIR$/src/main/java/libraries/linearalgebra/readme.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/model/backprop/Gradient.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/multiThreading/Threader.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/model/NeuralNetTest.java" afterDir="false" />
+    <list default="true" id="bd59e441-3c35-48dd-a7ea-318b5293692f" name="Changes" comment="Backprop, multithreading, and more :)">
+      <change afterPath="$PROJECT_DIR$/.README" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Results/original results/Group_1(non-random)_1.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Results/original results/Group_1(non-random)_2.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Results/original results/Group_1(non-random)_3.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Results/original results/Group_1(non-random)_4.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Results/original results/Group_1(non-random)_5.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Results/original results/Group_2(random)_1.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Results/original results/Group_2(random)_2.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Results/original results/Group_2(random)_3.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Results/original results/Group_2(random)_4.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Results/original results/Group_2(random)_5.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/activationFuncs/Relu.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/main/Experiment.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/activationFuncs/IActivationFunc.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/activationFuncs/IActivationFunc.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/activationFuncs/LeakyRelu.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/activationFuncs/LeakyRelu.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/activationFuncs/Sigmoid.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/activationFuncs/Sigmoid.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/linearalgebra/Matrix.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/libraries/linearalgebra/Matrix.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/linearalgebra/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/libraries/linearalgebra/README.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/linearalgebra/Vector.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/libraries/linearalgebra/Vector.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/libraries/linearalgebra/Vector.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/libraries/linearalgebra/Vector.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/main/GsonHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/main/GsonHandler.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/main/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/main/Main.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/model/NeuralNet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/model/NeuralNet.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/model/Set.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/model/Set.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/model/layers/HiddenLayer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/model/layers/HiddenLayer.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/model/layers/InputLayer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/model/layers/InputLayer.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/model/layers/Layer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/model/layers/Layer.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/model/layers/OutputLayer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/model/layers/OutputLayer.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/multiThreading/Threader.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/multiThreading/Threader.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/model/NeuralNetTest.java" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -34,8 +37,8 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="Class" />
         <option value="JUnit5 Test Class" />
+        <option value="Class" />
       </list>
     </option>
   </component>
@@ -90,6 +93,9 @@
     <key name="CreateTestDialog.Recents.Supers">
       <recent name="" />
     </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\yevge\IdeaProjects\ScienceProject2\Results\original results" />
+    </key>
     <key name="CreateTestDialog.RecentsKey">
       <recent name="model" />
       <recent name="" />
@@ -99,7 +105,7 @@
     <configuration name="Run The Thing" type="Application" factoryName="Application" temporary="true">
       <option name="MAIN_CLASS_NAME" value="main.Main" />
       <module name="ScienceProject2" />
-      <option name="PROGRAM_PARAMETERS" value="-ea" />
+      <option name="PROGRAM_PARAMETERS" value="-Xmx8000m" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -245,7 +251,14 @@
       <option name="project" value="LOCAL" />
       <updated>1667781068625</updated>
     </task>
-    <option name="localTasksCounter" value="19" />
+    <task id="LOCAL-00019" summary="Backprop, multithreading, and more :)">
+      <created>1668217212036</created>
+      <option name="number" value="00019" />
+      <option name="presentableId" value="LOCAL-00019" />
+      <option name="project" value="LOCAL" />
+      <updated>1668217212036</updated>
+    </task>
+    <option name="localTasksCounter" value="20" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -297,6 +310,30 @@
     <MESSAGE value="Gson json loading and set java class" />
     <MESSAGE value="activation Functions :)&#10;also moved sets variable to Set class" />
     <MESSAGE value="Layers, Neural Networks, linearalgebra, and forward prop :)" />
-    <option name="LAST_COMMIT_MESSAGE" value="Layers, Neural Networks, linearalgebra, and forward prop :)" />
+    <MESSAGE value="Backprop, multithreading, and more :)" />
+    <option name="LAST_COMMIT_MESSAGE" value="Backprop, multithreading, and more :)" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <breakpoint enabled="true" type="java-exception">
+          <properties class="java.lang.IllegalArgumentException" package="java.lang" />
+          <option name="timeStamp" value="2" />
+        </breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/model/NeuralNet.java</url>
+          <line>85</line>
+          <properties>
+            <option name="lambda-ordinal" value="-1" />
+          </properties>
+          <option name="timeStamp" value="3" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/main/Experiment.java</url>
+          <line>74</line>
+          <option name="timeStamp" value="7" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
   </component>
 </project>

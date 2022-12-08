@@ -25,7 +25,9 @@ public class GsonHandler {
 
     public static Set loadSet(String name) {
         try {
-            return g.fromJson(IOUtils.resourceToString("/CIFAR10/"+name+".json", StandardCharsets.UTF_8), Set.class).init();
+            Set set = g.fromJson(IOUtils.resourceToString("/CIFAR10/"+name+".json", StandardCharsets.UTF_8), Set.class).init();
+            set.init();
+            return set;
         } catch (IOException e) {
             e.printStackTrace();
             System.exit(0);

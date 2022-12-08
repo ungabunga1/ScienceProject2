@@ -11,6 +11,8 @@ import model.layers.OutputLayer;
 import multiThreading.Threader;
 
 import java.util.Arrays;
+import java.util.List;
+import java.util.stream.IntStream;
 
 public class NeuralNet {
     Layer[] layers;
@@ -55,22 +57,117 @@ public class NeuralNet {
         return Threader.forward(inputs,this);
     }
 
-    public double backparse(Vector[] inputs, Vector[] outputs, boolean computeCost) { // back propagation but faster... maybe
+    public double[] computeParse(Vector[] inputs, Vector[] outputs) {
+        if (inputs.length != outputs.length) {
+            throw new IllegalArgumentException();
+        }
+
         Vector[][] activations = parse(inputs);
-        Gradient gradient = Threader.backward(activations,outputs,this);
+        Vector[] neuralOutputs = new Vector[inputs.length];
+        for (int i = 0; i < inputs.length; i++) {
+            neuralOutputs[i] = activations[i][activations[i].length-1];
+        }
+
+        return new double[]{computeCost(neuralOutputs,outputs),computeAccuracy(neuralOutputs,outputs)};
+    }
+
+    public double[] backparse(Vector[] inputs, Vector[] outputs, boolean computeCost, boolean computeAccuracy, int splits, int maxGradientArraySize, double learningRate) {
+        double cost = 0;
+        double accuracy = 0;
+
+        long seed = Randomizer.rand.nextLong();
+        // using the same seed means that the numbers will be randomized the exact same way, which in this case, is good
+        Vector[][] splitInputs = Set.randomlySplit(inputs,splits,seed);
+        Vector[][] splitOutputs = Set.randomlySplit(outputs,splits,seed);
+
+        List<Integer> all = IntStream.range(0,splits).boxed().toList();
+        //List<List<Integer>> // have to split this up
+        //add .parallel()
+        double[][] doubles = all.stream().parallel().map(i->backparse(splitInputs[i],splitOutputs[i],maxGradientArraySize,learningRate,computeCost,computeAccuracy)).toArray(double[][]::new);
+
+        if (computeCost || computeAccuracy) {
+            for (int i = 0; i < splits; i++) {
+                if (computeCost) {
+                    cost += (double) doubles[i][0] / doubles.length;
+                }
+                if (computeAccuracy) {
+                    accuracy += (double) doubles[i][1] / doubles.length;
+                }
+            }
+        }
+
+        return new double[]{cost,accuracy};
+    }
+
+    public double[] backparse(Vector[] inputs, Vector[] outputs, int maxGradientArraySize,double learningRate, boolean computeCost, boolean computeAccuracy) { // back propagation but faster... maybe
+        if (inputs.length != outputs.length) {
+            throw new IllegalArgumentException();
+        }
+
+
+        Vector[][] activations = parse(inputs);
+        Gradient gradient = Threader.backward(activations,outputs,maxGradientArraySize,learningRate,this);
         applyGradient(gradient);
 
 
-        if (computeCost) {
-            Vector[] neuralOutputs = new Vector[inputs.length];
+        Vector[] neuralOutputs = new Vector[inputs.length];
+        if (computeCost || computeAccuracy) {
             for (int i = 0; i < neuralOutputs.length; i++) {
-                neuralOutputs[i] = activations[i][numOfLayers-1];
+                neuralOutputs[i] = activations[i][numOfLayers - 1];
             }
-            return computeCost(neuralOutputs,outputs);
         }
-        return -99999.69;
+
+        double cost = -1;
+        if (computeCost) {
+            cost = computeCost(neuralOutputs,outputs);
+            //System.out.println(cost);
+        }
+
+        double accuracy = -1;
+        if (computeAccuracy) {
+            accuracy = computeAccuracy(neuralOutputs,outputs);
+        }
+
+        return new double[]{cost, accuracy};
     }
 
+    public static double computeAccuracy(Vector[] outputs, Vector[] desiredOutputs) {
+        double total = outputs.length;
+        double accuracy = 0;
+        for (int i = 0; i < total; i++) {
+            int mostActive = determineOutput(outputs[i]);
+            int mostActiveDesried = determineOutput(desiredOutputs[i]);
+
+            if (false) {
+                System.out.println(outputs[i].toString());
+                System.out.println(desiredOutputs[i].toString());
+                System.out.println("----");
+                System.out.println(mostActive);
+                System.out.println(mostActiveDesried);
+                System.out.println("? : " + (mostActive == mostActiveDesried));
+                System.out.println("---------------------------");
+            }
+
+            if (mostActive == mostActiveDesried) {
+                accuracy ++;
+            } else{
+                //System.out.println(mostActive +">"+outputs[i].get(mostActive)+" || "+ mostActiveDesried+ ">"+ desiredOutputs[i].get(mostActiveDesried));
+            }
+        }
+       // System.out.println("why does it do this so many times?");
+        //System.out.println(accuracy +" / "+total);
+        return accuracy/total;
+    }
+
+    public static int determineOutput(Vector outputs) {
+        int index = 0;
+        for (int i = 0; i < outputs.length(); i++) {
+            if (outputs.get(i) > outputs.get(index)){
+                index = i;
+            }
+        }
+        return index;
+    }
     public static double computeCost(Vector[] outputs, Vector[] desiredOutputs) {
         double[] doubles = Threader.computeCost(outputs,desiredOutputs);
         double averageCost = 0;
@@ -92,11 +189,11 @@ public class NeuralNet {
         Vector[] biases = this.biases.clone();
 
         for (int i = 1; i < weights.length; i++) {
-            weights[i] = weights[i].add(gradient.getWg()[i]);
+            weights[i] = weights[i].subtract(gradient.getWg()[i]);
 
         }
         for (int i = 1; i < biases.length; i++) {
-            biases[i] = biases[i].add(gradient.getBg()[i]);
+            biases[i] = biases[i].subtract(gradient.getBg()[i]);
         }
         updateWeightAndBias(weights,biases);
     }
@@ -113,7 +210,7 @@ public class NeuralNet {
     }
 
 
-    public Gradient computeGradient(Vector[] activations, Vector desiredOutput, int totalGradients) { // takes in vector input, spits out a gradient for that input
+    public Gradient computeGradient(Vector[] activations, Vector desiredOutput, int totalGradients, double learningRate) { // takes in vector input, spits out a gradient for that input
         Matrix[] ws = new Matrix[weights.length];
         Vector[] bs = new Vector[biases.length];
 
@@ -124,7 +221,7 @@ public class NeuralNet {
         Vector actSens = activations[activations.length-1].subtract(desiredOutput).multiply(2); // get the activation sensitivity for the first ones
         for (int i = 0; i < numOfLayers-1; i ++) {
             int layerindex = (numOfLayers-1)-i;
-            var sensitivities = calcSens(activations,actSens,i,totalGradients);
+            var sensitivities = calcSens(activations,actSens,i,totalGradients,learningRate);
             ws[layerindex] = (Matrix) sensitivities[1];
             bs[layerindex] = (Vector) sensitivities[2];
 
@@ -133,7 +230,7 @@ public class NeuralNet {
         return new Gradient(ws,bs);
     }
 
-    public Object[] calcSens(Vector[] activations, Vector activationSensitivity, int depth, int totalGradients){
+    public Object[] calcSens(Vector[] activations, Vector activationSensitivity, int depth, int totalGradients, double learningRate){
         // get the relevant layer
         int layerindex = (numOfLayers-1)-depth;
         Layer layer = layers[layerindex];
@@ -148,30 +245,31 @@ public class NeuralNet {
         Vector zproduct = layer.getActivationFunc().derivative(z);
 
         // calculate the weight sensitivity
-        Matrix ws = Threader.weightSensitivities(activations[layerindex-1],zproduct,activationSensitivity,totalGradients,this);
+        Matrix ws = Threader.weightSensitivities(activations[layerindex-1],zproduct,activationSensitivity,totalGradients,learningRate,this);
 
         // calculate the bias sensitivity
-        Vector bs = Threader.biasSensitivities(zproduct,activationSensitivity,totalGradients,this);
+        Vector bs = Threader.biasSensitivities(zproduct,activationSensitivity,totalGradients,learningRate,this);
 
         // calculate the next activation sensitivity
-        Vector as = Threader.activatonSensitivities(lws,zproduct,activationSensitivity,totalGradients,this);
+        Vector as = Threader.activatonSensitivities(lws,zproduct,activationSensitivity,totalGradients,learningRate,this);
 
 
         return new Object[]{as,ws,bs};
     }
 
-    public double getWeightSensitivity(double lastActivation, double activationSensitivity, double zproduct, double totalgradients) {
-        return (lastActivation * activationSensitivity * zproduct)/totalgradients;
+    public double getWeightSensitivity(double lastActivation, double activationSensitivity, double zproduct, double totalgradients, double learningRate) {
+        return ((lastActivation * activationSensitivity * zproduct)/totalgradients)*learningRate;
+
     }
 
-    public double getBiasSensitivity(double activationSensitivity, double zproduct, double totalgradients) {
-        return (activationSensitivity*zproduct)/totalgradients;
+    public double getBiasSensitivity(double activationSensitivity, double zproduct, double totalgradients, double learningRate) {
+        return ((activationSensitivity*zproduct)/totalgradients)*learningRate;
     }
 
-    public double getActivationSensitivity(Vector weights, Vector activationSensitivites, Vector zproduct, double totalgradients) {
+    public double getActivationSensitivity(Vector weights, Vector activationSensitivites, Vector zproduct, double totalgradients, double learningRate) {
         double sensitivity = 0;
         for (int i = 0; i < weights.length(); i++) {
-            sensitivity += (weights.get(i)*activationSensitivites.get(i)*zproduct.get(i))/totalgradients;
+            sensitivity += ((weights.get(i)*activationSensitivites.get(i)*zproduct.get(i))/totalgradients)*learningRate;
         }
         return sensitivity;
     }

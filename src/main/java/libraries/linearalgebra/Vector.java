@@ -1,5 +1,7 @@
 package libraries.linearalgebra;
 
+import java.util.Arrays;
+
 /**
  * The Vector class provides basic vector operations for Euclidean vectors
  * represented as arrays of real numbers. 
@@ -43,7 +45,11 @@ public class Vector {
          this.entries[i] = u.entries[i];
       }
    }
-   
+
+   public Vector(int[] ints) {
+      this(Arrays.stream(ints).mapToDouble(i->i).toArray());
+   }
+
    /**
     * add method accepts a vector and adds it to the current vector
     * @param u the vector to add onto the calling vector.
