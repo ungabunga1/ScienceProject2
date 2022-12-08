@@ -4,30 +4,8 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="bd59e441-3c35-48dd-a7ea-318b5293692f" name="Changes" comment="Backprop, multithreading, and more :)">
-      <change afterPath="$PROJECT_DIR$/.README" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Results/original results/Group_1(non-random)_1.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Results/original results/Group_1(non-random)_2.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Results/original results/Group_1(non-random)_3.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Results/original results/Group_1(non-random)_4.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Results/original results/Group_1(non-random)_5.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Results/original results/Group_2(random)_1.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Results/original results/Group_2(random)_2.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Results/original results/Group_2(random)_3.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Results/original results/Group_2(random)_4.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Results/original results/Group_2(random)_5.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/activationFuncs/Relu.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/main/Experiment.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/libraries/linearalgebra/Vector.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/libraries/linearalgebra/Vector.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/main/GsonHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/main/GsonHandler.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/main/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/main/Main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/model/NeuralNet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/model/NeuralNet.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/model/Set.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/model/Set.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/model/layers/OutputLayer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/model/layers/OutputLayer.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/multiThreading/Threader.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/multiThreading/Threader.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/model/NeuralNetTest.java" beforeDir="false" />
+    <list default="true" id="bd59e441-3c35-48dd-a7ea-318b5293692f" name="Changes" comment="it has ben finished">
+      <change beforePath="$PROJECT_DIR$/.README" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -258,7 +236,14 @@
       <option name="project" value="LOCAL" />
       <updated>1668217212036</updated>
     </task>
-    <option name="localTasksCounter" value="20" />
+    <task id="LOCAL-00020" summary="it has ben finished">
+      <created>1670469397437</created>
+      <option name="number" value="00020" />
+      <option name="presentableId" value="LOCAL-00020" />
+      <option name="project" value="LOCAL" />
+      <updated>1670469397437</updated>
+    </task>
+    <option name="localTasksCounter" value="21" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -311,7 +296,8 @@
     <MESSAGE value="activation Functions :)&#10;also moved sets variable to Set class" />
     <MESSAGE value="Layers, Neural Networks, linearalgebra, and forward prop :)" />
     <MESSAGE value="Backprop, multithreading, and more :)" />
-    <option name="LAST_COMMIT_MESSAGE" value="Backprop, multithreading, and more :)" />
+    <MESSAGE value="it has ben finished" />
+    <option name="LAST_COMMIT_MESSAGE" value="it has ben finished" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
